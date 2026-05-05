@@ -420,7 +420,7 @@ while True:
     if going_forward and abs(hero.xcor() - goal[0]) < 40 and abs(hero.ycor() - goal[1]) < 40:
         print("🎯 Reached B! RETURN TO A!")
         print(f"🟢 Теперь будут появляться препятствия!")
-        going_forward = False
+        going_forward = False hero.color('yellow')
         
         log.append({
             "event": "reached_goal_B",
