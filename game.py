@@ -4,6 +4,9 @@ import time
 import hashlib
 import os
 import json
+import pygame
+pygame.mixer.init()
+sound = pygame.mixer.Sound("sound.wav")  # файл звука
 
 # ----------------------------
 # 🟢 КОНСТАНТЫ
@@ -421,7 +424,7 @@ while True:
     if going_forward and abs(hero.xcor() - goal[0]) < 40 and abs(hero.ycor() - goal[1]) < 40:
         print("🎯 Reached B! RETURN TO A!")
         print(f"🟢 Теперь будут появляться препятствия!")
-        going_forward = False hero.color('yellow')
+        going_forward = False hero.color('yellow') sound.play ()
         
         log.append({
             "event": "reached_goal_B",
